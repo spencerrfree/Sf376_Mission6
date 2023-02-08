@@ -23,7 +23,12 @@ namespace Sf376_Mission6.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult MyPodcasts()
+        {
+            return View();
+        }
+
+        public IActionResult MovieEntryForm()
         {
             return View();
         }
