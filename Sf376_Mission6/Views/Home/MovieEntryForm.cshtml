@@ -1,6 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Movie Entry Form";
 }
+@model Sf376_Mission6.Models.ApplicationResponse
 <h1>@ViewData["Title"]</h1>
-<a href ="https://baconsale.com/" >Baconsale site link</a>
+
 <p>Use this page to enter in movies into your database</p>
+
+<div>
+    <form>
+        <label asp-for="Rating">Rating:</label>
+        <select asp-for="Rating">
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select>
+    </form>
+
+</div>
