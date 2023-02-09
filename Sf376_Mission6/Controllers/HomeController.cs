@@ -12,10 +12,12 @@ namespace Sf376_Mission6.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private MovieContext MovieContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, MovieContext name)
         {
             _logger = logger;
+            MovieContext = name;
         }
 
         public IActionResult Index()
@@ -37,6 +39,9 @@ namespace Sf376_Mission6.Controllers
         [HttpPost]
         public IActionResult MovieEntryForm(ApplicationResponse ar)
         {
+            MovieContext.Add(ar);
+            MovieContext.SaveChanges();
+
             return View("Confirmation",ar);
         }
 
