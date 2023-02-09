@@ -28,9 +28,16 @@ namespace Sf376_Mission6.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult MovieEntryForm()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult MovieEntryForm(ApplicationResponse ar)
+        {
+            return View("Confirmation",ar);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
