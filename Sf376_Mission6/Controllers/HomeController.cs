@@ -50,5 +50,12 @@ namespace Sf376_Mission6.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet]
+        public IActionResult MovieList()
+        {
+            var movies = MovieContext.responses.ToList();
+            return View(movies);
+        }
     }
 }
