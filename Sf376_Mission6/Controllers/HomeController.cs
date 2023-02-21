@@ -61,5 +61,36 @@ namespace Sf376_Mission6.Controllers
                 .OrderBy(x => x.Title).ToList();
             return View(movies);
         }
+
+        [HttpGet]
+        public IActionResult Edit(string title)
+        {
+            ViewBag.Catergories = MovieContext.Catergories.ToList();
+
+            var movie = MovieContext.responses.Single(x => x.Title == title);
+
+            return View("MovieEntryForm", movie);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(ApplicationResponse blah)
+        {
+            MovieContext.Update(blah);
+            MovieContext.SaveChanges();
+            return RedirectToAction("MovieList");
+        }
+        [HttpGet]
+        public IActionResult Delete(string title)
+        {
+            var movie = MovieContext.responses.Single(x => x.Title == title);
+            return View(movie);
+        }
+        [HttpPost]
+        public IActionResult Delete(ApplicationResponse ar)
+        {
+            MovieContext.responses.Remove(ar);
+            MovieContext.SaveChanges();
+            return RedirectToAction("MovieList");
+        }
     }
 }
