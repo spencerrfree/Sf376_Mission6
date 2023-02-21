@@ -35,16 +35,26 @@ namespace Sf376_Mission6.Controllers
         public IActionResult MovieEntryForm()
         {
             ViewBag.Catergories = MovieContext.Catergories.ToList();
-            return View();
+            return View(new ApplicationResponse());
         }
 
         [HttpPost]
         public IActionResult MovieEntryForm(ApplicationResponse ar)
         {
-            MovieContext.Add(ar);
-            MovieContext.SaveChanges();
 
-            return View("Confirmation",ar);
+            if (ModelState.IsValid)
+            {
+                MovieContext.Add(ar);
+                MovieContext.SaveChanges();
+
+                return View("Confirmation", ar);
+            }
+            else //If Invalid
+            {
+                ViewBag.Catergories = MovieContext.Catergories.ToList();
+                return View();
+            }
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

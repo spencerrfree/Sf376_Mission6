@@ -11,24 +11,27 @@ namespace Sf376_Mission6.Models
 
         //declare variables, types, and specify required fields
         
-        [Required]
+        [Required(ErrorMessage ="Please select a rating from the list")]
         public string Rating { get; set; }
-        [Required]
         
-        [Key]
-        public int id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter a title")]
         public string Title { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Please enter a year")]
         public int Year { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Please enter the director's name")]
         public string Director { get; set; }
         public bool Edited { get; set; }
         public string LentTo { get; set; }
         public string Notes { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please select a category from the list")]
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+
+        [Required]
+        [Key]
+        public int id { get; set; }
     }
 }
