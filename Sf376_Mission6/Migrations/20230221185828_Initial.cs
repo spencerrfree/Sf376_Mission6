@@ -23,8 +23,10 @@ namespace Sf376_Mission6.Migrations
                 name: "responses",
                 columns: table => new
                 {
-                    Title = table.Column<string>(nullable: false),
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Rating = table.Column<string>(nullable: false),
+                    Title = table.Column<string>(nullable: false),
                     Year = table.Column<int>(nullable: false),
                     Director = table.Column<string>(nullable: false),
                     Edited = table.Column<bool>(nullable: false),
@@ -34,7 +36,7 @@ namespace Sf376_Mission6.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_responses", x => x.Title);
+                    table.PrimaryKey("PK_responses", x => x.id);
                     table.ForeignKey(
                         name: "FK_responses_Catergories_CategoryId",
                         column: x => x.CategoryId,
@@ -85,18 +87,18 @@ namespace Sf376_Mission6.Migrations
 
             migrationBuilder.InsertData(
                 table: "responses",
-                columns: new[] { "Title", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Year" },
-                values: new object[] { "The Agengers", 1, "Joss Whedon", false, "", "This is a classic", "PG-13", 2012 });
+                columns: new[] { "id", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 1, 1, "Joss Whedon", false, "", "This is a classic", "PG-13", "The Avengers", 2012 });
 
             migrationBuilder.InsertData(
                 table: "responses",
-                columns: new[] { "Title", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Year" },
-                values: new object[] { "Batman Begins", 1, "Christopher Nolan", false, "", "This is my favorite!", "PG-13", 2005 });
+                columns: new[] { "id", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 2, 1, "Christopher Nolan", false, "", "This is my favorite!", "PG-13", "Batman Begins", 2005 });
 
             migrationBuilder.InsertData(
                 table: "responses",
-                columns: new[] { "Title", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Year" },
-                values: new object[] { "Lord of the Rings: The Return of the King", 1, "Peter Jackson", false, "", "I had no idea this was from 2003 haha", "PG-13", 2003 });
+                columns: new[] { "id", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 3, 1, "Peter Jackson", false, "", "I had no idea this was from 2003 haha", "PG-13", "Lord of the Rings: The Return of the King", 2003 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_responses_CategoryId",

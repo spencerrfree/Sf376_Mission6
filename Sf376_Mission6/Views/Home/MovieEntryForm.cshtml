@@ -7,7 +7,7 @@
 <p>Use this page to enter in movies into your database</p>
 
 <div>
-    <form method ="post">
+    <form method="post">
 
 
         @*create form labels and specify specific length or option requirements*@
@@ -49,8 +49,8 @@
         <input asp-for="LentTo" /><br />
 
         <label asp-for="Notes">Notes:</label>
-        <input asp-for="Notes" maxlength="25"/><br />
-
+        <input asp-for="Notes" maxlength="25" /><br />
+        <input asp-for="id" type="hidden" />
         <button type="submit">Add Movie to Database</button>
 
     </form>

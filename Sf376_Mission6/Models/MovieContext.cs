@@ -35,14 +35,15 @@ namespace Sf376_Mission6.Models
             mb.Entity<ApplicationResponse>().HasData(
                 new ApplicationResponse
                 {
-                    Title = "The Agengers",
+                    Title = "The Avengers",
                     CategoryId = 1,
                     Year = 2012,
                     Director = "Joss Whedon",
                     Rating = "PG-13",
                     Edited = false,
                     LentTo = "",
-                    Notes = "This is a classic"
+                    Notes = "This is a classic",
+                    id = 1
                 },
                 new ApplicationResponse
                 {
@@ -53,7 +54,8 @@ namespace Sf376_Mission6.Models
                     Rating = "PG-13",
                     Edited = false,
                     LentTo = "",
-                    Notes = "This is my favorite!"
+                    Notes = "This is my favorite!",
+                    id = 2
                 },
                 new ApplicationResponse
                 {
@@ -64,7 +66,8 @@ namespace Sf376_Mission6.Models
                     Rating = "PG-13",
                     Edited = false,
                     LentTo = "",
-                    Notes = "I had no idea this was from 2003 haha"
+                    Notes = "I had no idea this was from 2003 haha",
+                    id = 3
                 }
             );
         }

@@ -16,6 +16,8 @@ namespace Sf376_Mission6.Models
         [Required]
         
         [Key]
+        public int id { get; set; }
+        [Required]
         public string Title { get; set; }
         [Required]
         public int Year { get; set; }

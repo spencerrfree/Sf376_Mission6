@@ -8,7 +8,7 @@ using Sf376_Mission6.Models;
 namespace Sf376_Mission6.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230221171034_Initial")]
+    [Migration("20230221185828_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,8 +19,9 @@ namespace Sf376_Mission6.Migrations
 
             modelBuilder.Entity("Sf376_Mission6.Models.ApplicationResponse", b =>
                 {
-                    b.Property<string>("Title")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
@@ -42,10 +43,14 @@ namespace Sf376_Mission6.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Year")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Title");
+                    b.HasKey("id");
 
                     b.HasIndex("CategoryId");
 
@@ -54,35 +59,38 @@ namespace Sf376_Mission6.Migrations
                     b.HasData(
                         new
                         {
-                            Title = "The Agengers",
+                            id = 1,
                             CategoryId = 1,
                             Director = "Joss Whedon",
                             Edited = false,
                             LentTo = "",
                             Notes = "This is a classic",
                             Rating = "PG-13",
+                            Title = "The Avengers",
                             Year = 2012
                         },
                         new
                         {
-                            Title = "Batman Begins",
+                            id = 2,
                             CategoryId = 1,
                             Director = "Christopher Nolan",
                             Edited = false,
                             LentTo = "",
                             Notes = "This is my favorite!",
                             Rating = "PG-13",
+                            Title = "Batman Begins",
                             Year = 2005
                         },
                         new
                         {
-                            Title = "Lord of the Rings: The Return of the King",
+                            id = 3,
                             CategoryId = 1,
                             Director = "Peter Jackson",
                             Edited = false,
                             LentTo = "",
                             Notes = "I had no idea this was from 2003 haha",
                             Rating = "PG-13",
+                            Title = "Lord of the Rings: The Return of the King",
                             Year = 2003
                         });
                 });

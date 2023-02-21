@@ -63,11 +63,11 @@ namespace Sf376_Mission6.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(string title)
+        public IActionResult Edit(int id)
         {
             ViewBag.Catergories = MovieContext.Catergories.ToList();
 
-            var movie = MovieContext.responses.Single(x => x.Title == title);
+            var movie = MovieContext.responses.Single(x => x.id == id);
 
             return View("MovieEntryForm", movie);
         }
@@ -80,9 +80,9 @@ namespace Sf376_Mission6.Controllers
             return RedirectToAction("MovieList");
         }
         [HttpGet]
-        public IActionResult Delete(string title)
+        public IActionResult Delete(int id)
         {
-            var movie = MovieContext.responses.Single(x => x.Title == title);
+            var movie = MovieContext.responses.Single(x => x.id == id);
             return View(movie);
         }
         [HttpPost]
