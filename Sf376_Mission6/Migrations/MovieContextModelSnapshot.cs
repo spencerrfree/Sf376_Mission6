@@ -103,6 +103,41 @@ namespace Sf376_Mission6.Migrations
                         {
                             CatergoryId = 1,
                             CatergoryName = "Action/Adventure"
+                        },
+                        new
+                        {
+                            CatergoryId = 2,
+                            CatergoryName = "Comedy"
+                        },
+                        new
+                        {
+                            CatergoryId = 3,
+                            CatergoryName = "Drama"
+                        },
+                        new
+                        {
+                            CatergoryId = 4,
+                            CatergoryName = "Family"
+                        },
+                        new
+                        {
+                            CatergoryId = 5,
+                            CatergoryName = "Horror/Suspense"
+                        },
+                        new
+                        {
+                            CatergoryId = 6,
+                            CatergoryName = "Miscellaneous"
+                        },
+                        new
+                        {
+                            CatergoryId = 7,
+                            CatergoryName = "Television"
+                        },
+                        new
+                        {
+                            CatergoryId = 8,
+                            CatergoryName = "VHS"
                         });
                 });
 

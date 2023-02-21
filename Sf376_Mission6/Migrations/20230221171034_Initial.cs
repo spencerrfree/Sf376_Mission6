@@ -49,6 +49,41 @@ namespace Sf376_Mission6.Migrations
                 values: new object[] { 1, "Action/Adventure" });
 
             migrationBuilder.InsertData(
+                table: "Catergories",
+                columns: new[] { "CatergoryId", "CatergoryName" },
+                values: new object[] { 2, "Comedy" });
+
+            migrationBuilder.InsertData(
+                table: "Catergories",
+                columns: new[] { "CatergoryId", "CatergoryName" },
+                values: new object[] { 3, "Drama" });
+
+            migrationBuilder.InsertData(
+                table: "Catergories",
+                columns: new[] { "CatergoryId", "CatergoryName" },
+                values: new object[] { 4, "Family" });
+
+            migrationBuilder.InsertData(
+                table: "Catergories",
+                columns: new[] { "CatergoryId", "CatergoryName" },
+                values: new object[] { 5, "Horror/Suspense" });
+
+            migrationBuilder.InsertData(
+                table: "Catergories",
+                columns: new[] { "CatergoryId", "CatergoryName" },
+                values: new object[] { 6, "Miscellaneous" });
+
+            migrationBuilder.InsertData(
+                table: "Catergories",
+                columns: new[] { "CatergoryId", "CatergoryName" },
+                values: new object[] { 7, "Television" });
+
+            migrationBuilder.InsertData(
+                table: "Catergories",
+                columns: new[] { "CatergoryId", "CatergoryName" },
+                values: new object[] { 8, "VHS" });
+
+            migrationBuilder.InsertData(
                 table: "responses",
                 columns: new[] { "Title", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Year" },
                 values: new object[] { "The Agengers", 1, "Joss Whedon", false, "", "This is a classic", "PG-13", 2012 });

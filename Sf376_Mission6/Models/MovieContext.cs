@@ -21,11 +21,15 @@ namespace Sf376_Mission6.Models
             //seed the table with 3 of my favorite movies
 
             mb.Entity<Category>().HasData(
-                new Category
-                {
-                    CatergoryId = 1,
-                    CatergoryName = "Action/Adventure"
-                });
+                new Category { CatergoryId = 1, CatergoryName = "Action/Adventure" },
+                new Category { CatergoryId = 2, CatergoryName = "Comedy" },
+                new Category { CatergoryId = 3, CatergoryName = "Drama" },
+                new Category { CatergoryId = 4, CatergoryName = "Family" },
+                new Category { CatergoryId = 5, CatergoryName = "Horror/Suspense" },
+                new Category { CatergoryId = 6, CatergoryName = "Miscellaneous" },
+                new Category { CatergoryId = 7, CatergoryName = "Television" },
+                new Category { CatergoryId = 8, CatergoryName = "VHS" }
+                );
 
 
             mb.Entity<ApplicationResponse>().HasData(

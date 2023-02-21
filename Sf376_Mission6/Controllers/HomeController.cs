@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Sf376_Mission6.Models;
 using System;
@@ -33,6 +34,7 @@ namespace Sf376_Mission6.Controllers
         [HttpGet]
         public IActionResult MovieEntryForm()
         {
+            ViewBag.Catergories = MovieContext.Catergories.ToList();
             return View();
         }
 
@@ -54,7 +56,9 @@ namespace Sf376_Mission6.Controllers
         [HttpGet]
         public IActionResult MovieList()
         {
-            var movies = MovieContext.responses.OrderBy(x => x.Title).ToList();
+            var movies = MovieContext.responses
+                .Include(x => x.Category)
+                .OrderBy(x => x.Title).ToList();
             return View(movies);
         }
     }

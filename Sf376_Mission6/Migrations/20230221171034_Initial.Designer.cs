@@ -8,7 +8,7 @@ using Sf376_Mission6.Models;
 namespace Sf376_Mission6.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20230221163924_Initial")]
+    [Migration("20230221171034_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,6 +105,41 @@ namespace Sf376_Mission6.Migrations
                         {
                             CatergoryId = 1,
                             CatergoryName = "Action/Adventure"
+                        },
+                        new
+                        {
+                            CatergoryId = 2,
+                            CatergoryName = "Comedy"
+                        },
+                        new
+                        {
+                            CatergoryId = 3,
+                            CatergoryName = "Drama"
+                        },
+                        new
+                        {
+                            CatergoryId = 4,
+                            CatergoryName = "Family"
+                        },
+                        new
+                        {
+                            CatergoryId = 5,
+                            CatergoryName = "Horror/Suspense"
+                        },
+                        new
+                        {
+                            CatergoryId = 6,
+                            CatergoryName = "Miscellaneous"
+                        },
+                        new
+                        {
+                            CatergoryId = 7,
+                            CatergoryName = "Television"
+                        },
+                        new
+                        {
+                            CatergoryId = 8,
+                            CatergoryName = "VHS"
                         });
                 });
 
