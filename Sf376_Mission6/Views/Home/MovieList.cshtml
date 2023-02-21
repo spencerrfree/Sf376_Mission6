@@ -7,12 +7,12 @@
 
 @model List<ApplicationResponse>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-striped">
 
-    <thead>
+    <thead class="font-weight-bold">
         <tr>
             <td>Title</td>
-            <td>Category</td>
+            <td>CategoryId</td>
             <td>Year</td>
             <td>Director</td>
             <td>Rating</td>
@@ -27,7 +27,7 @@
             {
         <tr>
             <td>@x.Title</td>
-            <td>@x.Category</td>
+            <td>@x.CategoryId</td>
             <td>@x.Year</td>
             <td>@x.Director</td>
             <td>@x.Rating</td>

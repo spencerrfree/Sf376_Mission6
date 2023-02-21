@@ -54,7 +54,7 @@ namespace Sf376_Mission6.Controllers
         [HttpGet]
         public IActionResult MovieList()
         {
-            var movies = MovieContext.responses.ToList();
+            var movies = MovieContext.responses.OrderBy(x => x.Title).ToList();
             return View(movies);
         }
     }

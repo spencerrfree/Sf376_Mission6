@@ -20,9 +20,8 @@ namespace Sf376_Mission6.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -46,13 +45,15 @@ namespace Sf376_Mission6.Migrations
 
                     b.HasKey("Title");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("responses");
 
                     b.HasData(
                         new
                         {
                             Title = "The Agengers",
-                            Category = "Action/Adventure",
+                            CategoryId = 1,
                             Director = "Joss Whedon",
                             Edited = false,
                             LentTo = "",
@@ -63,7 +64,7 @@ namespace Sf376_Mission6.Migrations
                         new
                         {
                             Title = "Batman Begins",
-                            Category = "Action/Adventure",
+                            CategoryId = 1,
                             Director = "Christopher Nolan",
                             Edited = false,
                             LentTo = "",
@@ -74,7 +75,7 @@ namespace Sf376_Mission6.Migrations
                         new
                         {
                             Title = "Lord of the Rings: The Return of the King",
-                            Category = "Action/Adventure",
+                            CategoryId = 1,
                             Director = "Peter Jackson",
                             Edited = false,
                             LentTo = "",
@@ -82,6 +83,36 @@ namespace Sf376_Mission6.Migrations
                             Rating = "PG-13",
                             Year = 2003
                         });
+                });
+
+            modelBuilder.Entity("Sf376_Mission6.Models.Category", b =>
+                {
+                    b.Property<int>("CatergoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CatergoryName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CatergoryId");
+
+                    b.ToTable("Catergories");
+
+                    b.HasData(
+                        new
+                        {
+                            CatergoryId = 1,
+                            CatergoryName = "Action/Adventure"
+                        });
+                });
+
+            modelBuilder.Entity("Sf376_Mission6.Models.ApplicationResponse", b =>
+                {
+                    b.HasOne("Sf376_Mission6.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

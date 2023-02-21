@@ -14,9 +14,8 @@ namespace Sf376_Mission6.Models
         [Required]
         public string Rating { get; set; }
         [Required]
-        public string Category { get; set; }
+        
         [Key]
-        [Required]
         public string Title { get; set; }
         [Required]
         public int Year { get; set; }
@@ -25,5 +24,9 @@ namespace Sf376_Mission6.Models
         public bool Edited { get; set; }
         public string LentTo { get; set; }
         public string Notes { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }
