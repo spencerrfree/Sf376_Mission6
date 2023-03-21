@@ -11,7 +11,7 @@ function App() {
         <Welcome/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Scroll down to see the data!
+          Scroll down to see the data.
         </p>
       </header>
       <TeamList/>
